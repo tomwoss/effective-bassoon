@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+     <meta charset="utf-8" />
+	 <title>rozwiązania i usługi IT!</title>
+	 <meta name="description" content="IT Solutions" />
+	 <meta name="keywords" content="Przykłady rozwiązań IT" />
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	 <meta name="author" content="Tomasz Woś" />
+	 <link rel="stylesheet"  href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&subset=latin-ext" rel="stylesheet">	   
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+     <script>
+       $(document).ready(function() {
+           $("html").on("submit","#contact_form",function(e){
+                e.preventDefault();
+                $("#send_form_status").html('').hide();
+                var data=$("#contact_form").serialize();
+                $.post("/send_form.php",data,function(res){
+                   $("#send_form_status").html(res.msg).show();
+                   if(res.status==1){ 
+                      $("#contact_form")[0].reset();
+                  } 
+               });
+            });
+         });
+     </script>
+	 
+     <style>
+    
+
+	#footer
+	{
+	     clear: both;
+		 background-color: black;
+		 color: white;
+		 text-align: center;
+		 padding: 20px;
+     }
+	
+     </style>
+
+	 
+</head>
+<body>
+    <div id="wrapper">
+           <header>
+                     <img  class="big"  src="programista.jpg" height="350" width="350"  float: center; alt="programista - header"   />
+		    </header>
+			
+			<nav><a class="menu active" href="index.html">Oferta</a>
+			<a class="menu" href="podstrona.html">Aktualności</a>
+			<a class="menu" href="#">O nas</a>
+			<a class="menu" href="#">Kontakt</a>
+		     </nav>
+			 
+			 
+			 <section>
+			        <div id="section">
+			            <article>
+						         </br>
+					             <h1>1.Jak wdrożyć odpowiednie rozwiązania IT?</h1>
+	                             <h1>2.Które rozwiązania IT zabezpieczą organizację przed zagrożeniem zewnętrznym i wewnętrznym?</h1>
+			                     <h1>3.Jak dostosować stronę www aby pozyskać więcej klientów?</h1>
+								 <br/>
+								 <h>Aby odpowiedzieć na pierwsze dwa pytania w usystematyzowany i jasny sposób należy określić:
+			                     <br/>
+		                         <p>A. Topologię sieci LAN/WAN w ramach organizacji<br/>
+			                     B. Ilość zasobów: systemy, wirtualne, fizyczne, w chmurze, pracownicy<br/>
+			                     C. Polityka Identity & Access management<br/>
+			                     D. Mapa ryzyka i podatności</p>
+								 </br>
+			                     <p>Wiadomo nie od dziś, że to korporacje wyznaczają kierunki i trendy rozwiązań IT wybierając tych producentów, którzy spełniają wszystkie ich wymagania czyli rozwiązania wielozadaniowe, które w przeciwieństwie do pozostałych na rynku gwarantują wszechstronne zastosowanie w każdym środowisku oraz bezpieczeństwo bez potrzeby wdrożenia innych komponentów. Platforma <a href="https://azure.microsoft.com/pl-pl/" target="blank">Azure</a><img class="left" src="azure1.png" height="200" width="350"/><a href="https://azure.microsoft.com/pl-pl/" target="_blank"> dostarcza rozwiązania z każdej dziedziny w ramach jednej chmury.</a>
+								 </br>
+		                </article>
+                     </div>						
+		    </section>
+			   
+			</br>
+						  </br>
+						  </br>
+						  </br>
+						  </br>
+						  </br>
+						  </br>
+	        <div>			  
+		    <h2>Formularz kontaktowy</h2>
+            <div id="send_form_status"></div>
+            <form method="post" action="/send_form.php" id="contact_form">
+            <div><label for="name">Imię i nazwisko</label></div>
+            <div><input type="text" name="name" id="name" class="formField" /></div>
+            <div><label for="phone">Numer telefonu</label></div>
+            <div><input type="text" name="phone" id="phone" class="formField" /></div>
+            <div><label for="email">Adres email</label></div>
+            <div><input type="text" name="email" id="email" class="formField" /></div>
+            <div><label for="message">Treść wiadomości</label></div>
+            <div><textarea name="message" id="message" class="formField"></textarea></div>
+            <div><button id="sendBtn">Wyślij</button></div>
+            </form>
+			</div>
+            <iframe width="1000" height="563" src="https://www.youtube.com/embed/KXkBZCe699A?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    			
+			<footer>
+			       <div id="footer">
+		           Rozwiązania IT!  &copy; Wszelkie prawa zastrzeżone
+			       <h><br/></a>kontakt: Tomasz Woś<br/>
+                   <br/>tel: 605 949 134<br/>
+                   <br/>t.wos@codestart.pl<br/></h>
+		     </footer>
+		</div>
